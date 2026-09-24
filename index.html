@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="bn"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NIR TOPUP</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Noto Sans Bengali,sans-serif;background:#f6f8fc;color:#171a22}
+header{background:#fff;border-bottom:1px solid #e6e9ef;position:sticky;top:0;z-index:5}.nav{max-width:1100px;margin:auto;padding:16px 4%;display:flex;justify-content:space-between;align-items:center}.logo{font-weight:900;font-size:24px}.logo b{color:#6b4cff}
+nav a{margin-left:18px;color:#555;text-decoration:none}.hero{max-width:1100px;margin:auto;padding:60px 4%;text-align:center}.hero h1{font-size:clamp(36px,7vw,62px);margin:10px 0}.hero h1 span{color:#6b4cff}.hero p{color:#697386;max-width:650px;margin:auto;line-height:1.7}
+.btn{border:0;border-radius:11px;padding:13px 20px;font-weight:800;cursor:pointer}.primary{background:#6b4cff;color:white}.secondary{background:#fff;border:1px solid #ddd}.actions{margin-top:22px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.wrap{max-width:1100px;margin:auto;padding:0 4% 50px}.section{margin-top:25px}.section h2{margin-bottom:14px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{background:#fff;border:1px solid #e5e8ef;border-radius:16px;padding:18px;box-shadow:0 5px 20px #202b3b08}.card:hover{border-color:#c9c0ff}.icon{font-size:28px;margin-bottom:12px}.card p{color:#727c8d;font-size:13px}.price{font-weight:800;color:#5b3ee8;margin-top:12px}
+.modal{display:none;position:fixed;inset:0;background:#17203366;place-items:center;padding:18px;z-index:10}.box{background:#fff;width:min(500px,100%);border-radius:18px;padding:22px;max-height:92vh;overflow:auto}.close{float:right;border:0;background:none;font-size:24px}.field{margin:11px 0}.field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}.input,.select{width:100%;padding:12px;border:1px solid #dfe3ea;border-radius:10px;background:#fafbfc}.pay{display:grid;grid-template-columns:1fr 1fr;gap:10px}.pay label{border:2px solid #e1e4ea;padding:12px;border-radius:11px;cursor:pointer}.pay input{margin-right:8px}.notice{background:#f4f1ff;border:1px solid #ddd6ff;padding:12px;border-radius:10px;font-size:13px;line-height:1.6}
+footer{background:#fff;border-top:1px solid #e6e9ef;padding:28px 4%;color:#778094;text-align:center}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:500px){nav{display:none}.grid{grid-template-columns:1fr 1fr}.card{padding:14px}.hero{padding-top:40px}}
+</style></head><body>
+<header><div class="nav"><div class="logo">NIR <b>TOPUP</b></div><nav><a href="#services">Services</a><a href="#track">Track Order</a></nav></div></header>
+<section class="hero"><div>⚡ Fast • Secure • Easy</div><h1>Gaming <span>Top-Up</span> Hub</h1><p>NIR TOPUP — গেমিং টপ-আপ ও ডিজিটাল সার্ভিসের জন্য আপনার নিজস্ব প্ল্যাটফর্ম।</p><div class="actions"><a class="btn primary" href="#services">Start Top Up</a><a class="btn secondary" href="#track">Track Order</a></div></section>
+<div class="wrap"><section class="section" id="services"><h2>🎮 Game Topup</h2><div class="grid">
+<div class="card" onclick="openOrder('Free Fire Diamond',['25 Diamond - ৳25','50 Diamond - ৳45','115 Diamond - ৳90'])"><div class="icon">💎</div><h3>Free Fire Diamond</h3><p>UID based top-up</p><div class="price">From ৳25</div></div>
+<div class="card" onclick="openOrder('Weekly Membership',['Weekly - ৳150','Monthly - ৳500'])"><div class="icon">🔥</div><h3>Weekly / Monthly</h3><p>Membership packages</p><div class="price">View packages</div></div>
+<div class="card" onclick="openOrder('PUBG UC',['60 UC - ৳100','325 UC - ৳500','660 UC - ৳950'])"><div class="icon">🎯</div><h3>PUBG UC</h3><p>UC top-up</p><div class="price">From ৳100</div></div>
+<div class="card" onclick="openOrder('Game Voucher',['Voucher - ৳100','Voucher - ৳500'])"><div class="icon">🎟️</div><h3>Game Voucher</h3><p>Digital vouchers</p><div class="price">View packages</div></div>
+</div></section>
+<section class="section"><h2>📱 Digital Services</h2><div class="grid">
+<div class="card" onclick="openOrder('Spotify Premium',['1 Month - ৳150','3 Months - ৳350'])"><div class="icon">🎵</div><h3>Spotify Premium</h3><p>Subscription</p></div>
+<div class="card" onclick="openOrder('Canva Pro',['1 Month - ৳150','1 Year - ৳700'])"><div class="icon">🎨</div><h3>Canva Pro</h3><p>Subscription</p></div>
+<div class="card" onclick="openOrder('CapCut Pro',['1 Month - ৳180','1 Year - ৳800'])"><div class="icon">✂️</div><h3>CapCut Pro</h3><p>Subscription</p></div>
+<div class="card" onclick="openOrder('SMM Service',['Followers - ৳50','Likes - ৳30'])"><div class="icon">📈</div><h3>SMM Service</h3><p>Social media service</p></div>
+</div></section>
+<section class="section" id="track"><h2>🔎 Track Order</h2><div class="card"><div style="display:flex;gap:8px"><input id="trackCode" class="input" placeholder="যেমন NIR12345678"><button class="btn primary" onclick="track()">Search</button></div><p id="trackResult"></p></div></section></div>
+<footer>© 2026 NIR TOPUP. All Rights Reserved.</footer>
+
+<div class="modal" id="modal"><div class="box"><button class="close" onclick="closeOrder()">×</button><h2 id="orderTitle">Place Order</h2>
+<div class="notice">পেমেন্ট করার আগে সঠিক package ও amount নিশ্চিত করুন। Payment gateway credentials না দেওয়া পর্যন্ত এটি manual verification flow হিসেবে কাজ করবে।</div>
+<form id="orderForm" onsubmit="submitOrder(event)">
+<div class="field"><label>Package</label><select id="package" class="select" required></select></div>
+<div class="field"><label>Player UID / Account ID</label><input id="uid" class="input" required placeholder="আপনার UID / ID"></div>
+<div class="field"><label>Amount (৳)</label><input id="amount" class="input" type="number" min="1" required></div>
+<div class="field"><label>Payment Method</label><div class="pay"><label><input type="radio" name="method" value="bkash" checked> bKash</label><label><input type="radio" name="method" value="nagad"> Nagad</label></div></div>
+<div class="field"><label>Transaction ID</label><input id="trx" class="input" required placeholder="Payment-এর TrxID"></div>
+<button class="btn primary" style="width:100%">Place Order</button>
+</form><p id="orderResult"></p></div></div>
+<script>
+let product="";
+function openOrder(name,items){product=name;orderTitle.textContent=name;package.innerHTML=items.map((x,i)=>`<option value="${x}">${x}</option>`).join("");amount.value=(items[0].match(/৳(\\d+)/)||[,0])[1];modal.style.display="grid"}
+function closeOrder(){modal.style.display="none"}
+package.onchange=()=>amount.value=(package.value.match(/৳(\\d+)/)||[,0])[1];
+async function submitOrder(e){e.preventDefault();const method=document.querySelector('input[name=method]:checked').value;const r=await fetch('/api/orders',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({product,packageName:package.value,uid:uid.value,amount:amount.value,method,trxId:trx.value})});const d=await r.json();orderResult.innerHTML=d.ok?`<div class="notice">অর্ডার সফল। আপনার Order ID: <b>${d.orderCode}</b><br>এই ID দিয়ে Track Order থেকে status দেখুন।</div>`:`<div class="notice">${d.error||'সমস্যা হয়েছে'}</div>`}
+async function track(){const code=trackCode.value.trim();if(!code)return;const r=await fetch('/api/orders/'+encodeURIComponent(code));const d=await r.json();trackResult.innerHTML=r.ok?`<div class="notice">Order: <b>${d.order_code}</b><br>Product: ${d.product}<br>Amount: ৳${d.amount}<br>Payment: ${d.method}<br>Status: <b>${d.status}</b></div>`:`${d.error||'Order not found'}`}
+</script></body></html>
